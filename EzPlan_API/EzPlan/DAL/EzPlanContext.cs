@@ -8,6 +8,8 @@ namespace EzPlan.DAL
 {
     public class EzPlanContext : DbContext
     {
-
+        public EzPlanContext() : base("EzPlanContext")
+        {
+        }
     }
 }

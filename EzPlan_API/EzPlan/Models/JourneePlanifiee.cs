@@ -11,4 +11,5 @@ namespace EzPlan.Models
         public List<PartieDeTachePlanifiee> PartiesDeTachesPlanifiees { get; set; }
         public SemainePlanifiee SemainePlanifiee { get; set; }
     }
+
 }
