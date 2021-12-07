@@ -5,7 +5,15 @@ using System.Threading.Tasks;
 
 namespace EzPlan.Models
 {
-    public class TachePlanifiee
+    public class TachePlanifiee : Tache
     {
+        public DateTime DateEcheance { get; set; }
+        public SemainePlanifiee SemainePlanifiee { get; set; }
+        public List<PartieDeTachePlanifiee> PartiesDeTachesPlanifiees { get; set; }
+
+        public TachePlanifiee()
+        {
+        }
+
     }
 }
