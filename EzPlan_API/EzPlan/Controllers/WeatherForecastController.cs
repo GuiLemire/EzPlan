@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace EzPlan.Controllers
+namespace WebApplication8.Controllers
 {
     [ApiController]
     [Route("[controller]")]
@@ -24,16 +24,39 @@ namespace EzPlan.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<WeatherForecast> Get()
+        public IActionResult Get()
         {
-            var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            var jack = new
             {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
-            })
-            .ToArray();
+                temp = 12,
+                wind = "fort"
+            };
+
+
+            return new JsonResult(jack);
         }
+        //https://localhost:44339/weatherforecast/33
+        [HttpGet("{temp}")]
+        public IEnumerable<object> JsonArray(string temp)
+        {
+            List<object> liste = new();
+            var jack = new
+            {
+                temp = temp,
+                wind = "fort"
+            };
+            liste.Add(jack);
+
+            var mike = new
+            {
+                temp = temp,
+                wind = " très fort"
+            };
+
+            liste.Add(mike);
+
+            return liste;
+        }
+
     }
 }

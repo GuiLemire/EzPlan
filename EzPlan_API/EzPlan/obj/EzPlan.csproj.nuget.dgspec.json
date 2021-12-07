@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Guillaume\\Documents\\Analyste Programmeur\\GitHubDesktop\\EzPlan\\EzPlan_API\\EzPlan\\EzPlan.csproj": {}
+    "C:\\Users\\ThinkCenter\\Documents\\Cours programmeur Analyste\\Session 4\\Développement d'applications dans différents environnements\\Soraya\\Devoirs\\tp2\\EzPlan\\EzPlan_API\\EzPlan\\EzPlan.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Guillaume\\Documents\\Analyste Programmeur\\GitHubDesktop\\EzPlan\\EzPlan_API\\EzPlan\\EzPlan.csproj": {
+    "C:\\Users\\ThinkCenter\\Documents\\Cours programmeur Analyste\\Session 4\\Développement d'applications dans différents environnements\\Soraya\\Devoirs\\tp2\\EzPlan\\EzPlan_API\\EzPlan\\EzPlan.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Guillaume\\Documents\\Analyste Programmeur\\GitHubDesktop\\EzPlan\\EzPlan_API\\EzPlan\\EzPlan.csproj",
+        "projectUniqueName": "C:\\Users\\ThinkCenter\\Documents\\Cours programmeur Analyste\\Session 4\\Développement d'applications dans différents environnements\\Soraya\\Devoirs\\tp2\\EzPlan\\EzPlan_API\\EzPlan\\EzPlan.csproj",
         "projectName": "EzPlan",
-        "projectPath": "C:\\Users\\Guillaume\\Documents\\Analyste Programmeur\\GitHubDesktop\\EzPlan\\EzPlan_API\\EzPlan\\EzPlan.csproj",
-        "packagesPath": "C:\\Users\\Guillaume\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Guillaume\\Documents\\Analyste Programmeur\\GitHubDesktop\\EzPlan\\EzPlan_API\\EzPlan\\obj\\",
+        "projectPath": "C:\\Users\\ThinkCenter\\Documents\\Cours programmeur Analyste\\Session 4\\Développement d'applications dans différents environnements\\Soraya\\Devoirs\\tp2\\EzPlan\\EzPlan_API\\EzPlan\\EzPlan.csproj",
+        "packagesPath": "C:\\Users\\ThinkCenter\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ThinkCenter\\Documents\\Cours programmeur Analyste\\Session 4\\Développement d'applications dans différents environnements\\Soraya\\Devoirs\\tp2\\EzPlan\\EzPlan_API\\EzPlan\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Guillaume\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ThinkCenter\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -64,7 +63,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
