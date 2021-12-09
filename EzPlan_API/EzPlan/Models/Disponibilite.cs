@@ -17,9 +17,8 @@ namespace EzPlan.Models
         {
         }
 
-        public Disponibilite(HoraireDisponibilites horaireDisponibilites, string journee, double heureDebut, double heureFin)
+        public Disponibilite(string journee, double heureDebut, double heureFin)
         {
-            HoraireDisponibilites = horaireDisponibilites;
             Journee = journee;
             HeureDebut = heureDebut;
             HeureFin = heureFin;

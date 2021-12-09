@@ -15,9 +15,18 @@ namespace EzPlan
     {
         public static void Main(string[] args)
         {
+            Utilisateur user = new Utilisateur("test@testing.com", "password");
+           
+            HoraireDisponibilites monHoraire = new HoraireDisponibilites("Mon horaire");
+            Disponibilite dispo = new Disponibilite("Jeudi", 12, 14.5);
+            monHoraire.AjouterDisponibilite(dispo);
+            
+
+            Tache tache = new Tache("Ma tache", 2.5, 1.3, 0);
+
             EzPlanContext ezContext = new EzPlanContext();
 
-            ezContext.Utilisateurs.Add(new Utilisateur());
+            ezContext.Utilisateurs.Add(user);
             ezContext.SaveChanges();
 
             CreateHostBuilder(args).Build().Run();

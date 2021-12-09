@@ -16,18 +16,21 @@ namespace EzPlan.Models
         {
         }
 
-        public HoraireDisponibilites(string nom, Utilisateur utilisateur)
+        public HoraireDisponibilites(string nom)
         {
-            Utilisateur = utilisateur;
             Nom = nom;
         }
 
-        private string AjouterDisponibilite(Disponibilite disponibilite)
+        public string AjouterDisponibilite(Disponibilite disponibilite)
         {
-            if (!this.Disponibilites.Contains(disponibilite))
+            if (Disponibilites == null)
             {
-                this.Disponibilites.Add(disponibilite);
-                return "Ajouté avec succès.";
+                Disponibilites = new();
+            }
+            if (!Disponibilites.Contains(disponibilite))
+            {
+                Disponibilites.Add(disponibilite);
+                return "Disponibilité ajouté avec succès.";
             }
             return "Cette disponibilite existe déjà.";
         }
