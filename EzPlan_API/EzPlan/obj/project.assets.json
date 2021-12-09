@@ -1207,19 +1207,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Guillaume\\.nuget\\packages\\": {}
+    "C:\\Users\\ThinkCenter\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Guillaume\\Documents\\Analyste Programmeur\\GitHubDesktop\\EzPlan\\EzPlan_API\\EzPlan\\EzPlan.csproj",
+      "projectUniqueName": "D:\\Projects\\EzPlan\\EzPlan_API\\EzPlan\\EzPlan.csproj",
       "projectName": "EzPlan",
-      "projectPath": "C:\\Users\\Guillaume\\Documents\\Analyste Programmeur\\GitHubDesktop\\EzPlan\\EzPlan_API\\EzPlan\\EzPlan.csproj",
-      "packagesPath": "C:\\Users\\Guillaume\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Guillaume\\Documents\\Analyste Programmeur\\GitHubDesktop\\EzPlan\\EzPlan_API\\EzPlan\\obj\\",
+      "projectPath": "D:\\Projects\\EzPlan\\EzPlan_API\\EzPlan\\EzPlan.csproj",
+      "packagesPath": "C:\\Users\\ThinkCenter\\.nuget\\packages\\",
+      "outputPath": "D:\\Projects\\EzPlan\\EzPlan_API\\EzPlan\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Guillaume\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ThinkCenter\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1272,7 +1272,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }
