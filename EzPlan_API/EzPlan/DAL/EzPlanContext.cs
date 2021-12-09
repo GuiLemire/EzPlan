@@ -10,6 +10,7 @@ namespace EzPlan.DAL
     {
         public EzPlanContext() : base("EzPlanContext")
         {
+
         }
     }
 }

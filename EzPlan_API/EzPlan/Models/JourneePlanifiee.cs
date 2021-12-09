@@ -7,6 +7,7 @@ namespace EzPlan.Models
 {
     public class JourneePlanifiee
     {
+        public int JourneePlanifieeID { get; set; }
         public DateTime Date { get; set; }
         public List<PartieDeTachePlanifiee> PartiesDeTachesPlanifiees { get; set; }
         public SemainePlanifiee SemainePlanifiee { get; set; }

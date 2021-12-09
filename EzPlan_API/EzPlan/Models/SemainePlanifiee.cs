@@ -9,9 +9,9 @@ namespace EzPlan.Models
     {
         public int SemainePlanifieeID { get; set; }
         public DateTime DateDebut { get; set; }
-        public Utilisateur Utilisateur { get; set; }
-        public List<TachePlanifiee> TachesPlanifiees {get;set;}
+        public List<TachePlanifiee> TachesPlanifiees { get; set; }
         public List<JourneePlanifiee> JourneesPlanifiees { get; set; }
+        public Utilisateur Utilisateur { get; set; }
 
         public SemainePlanifiee()
         {
