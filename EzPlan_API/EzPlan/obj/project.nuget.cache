@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "QNvdGh8fowLWWaITFNchGxvi23MYarBQORwQBZl6/B1m4T+4R8D/0wnlvOUStzsJpwJxyIAQYRo3Bz1ptVMI+w==",
+  "dgSpecHash": "H6OwKwoue81jbK69c22GBqqwvLqelTWx3ZuTD7JAOAKxdQnGeTwhEnKP8SMsqoUHjglOlKsvt197/q2eLVWAWg==",
   "success": true,
   "projectFilePath": "D:\\Projects\\EzPlan\\EzPlan_API\\EzPlan\\EzPlan.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,7 @@
     "C:\\Users\\ThinkCenter\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\ThinkCenter\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\ThinkCenter\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\ThinkCenter\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\ThinkCenter\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",
     "C:\\Users\\ThinkCenter\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\ThinkCenter\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",

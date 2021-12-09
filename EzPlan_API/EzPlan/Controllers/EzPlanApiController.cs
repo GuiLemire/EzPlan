@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using EzPlan.Models;
+using EzPlan.Parsers;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -26,14 +28,9 @@ namespace WebApplication8.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            var jack = new
-            {
-                temp = 12,
-                wind = "fort"
-            };
+            Disponibilite dispo = new("Mardi", 1234, 1235);
+            return DisponibiliteParser.ParseToJSON(dispo);
 
-
-            return new JsonResult(jack);
         }
         //https://localhost:44339/weatherforecast/33
         [HttpGet("{temp}")]
