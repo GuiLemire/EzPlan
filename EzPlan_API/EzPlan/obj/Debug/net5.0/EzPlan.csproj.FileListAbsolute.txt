@@ -39,6 +39,7 @@ C:\Users\Guillaume\Documents\Analyste Programmeur\GitHubDesktop\EzPlan\EzPlan_AP
 C:\Users\Guillaume\Documents\Analyste Programmeur\GitHubDesktop\EzPlan\EzPlan_API\EzPlan\obj\Debug\net5.0\ref\EzPlan.dll
 C:\Users\Guillaume\Documents\Analyste Programmeur\GitHubDesktop\EzPlan\EzPlan_API\EzPlan\obj\Debug\net5.0\EzPlan.pdb
 C:\Users\Guillaume\Documents\Analyste Programmeur\GitHubDesktop\EzPlan\EzPlan_API\EzPlan\obj\Debug\net5.0\EzPlan.genruntimeconfig.cache
+<<<<<<< Updated upstream
 D:\Projects\EzPlan\EzPlan_API\EzPlan\bin\Debug\net5.0\appsettings.Development.json
 D:\Projects\EzPlan\EzPlan_API\EzPlan\bin\Debug\net5.0\appsettings.json
 D:\Projects\EzPlan\EzPlan_API\EzPlan\bin\Debug\net5.0\EzPlan.exe
@@ -81,3 +82,6 @@ D:\Projects\EzPlan\EzPlan_API\EzPlan\obj\Debug\net5.0\EzPlan.dll
 D:\Projects\EzPlan\EzPlan_API\EzPlan\obj\Debug\net5.0\ref\EzPlan.dll
 D:\Projects\EzPlan\EzPlan_API\EzPlan\obj\Debug\net5.0\EzPlan.pdb
 D:\Projects\EzPlan\EzPlan_API\EzPlan\obj\Debug\net5.0\EzPlan.genruntimeconfig.cache
+=======
+C:\Users\Guillaume\Documents\Analyste Programmeur\GitHubDesktop\EzPlan\EzPlan_API\EzPlan\bin\Debug\net5.0\Newtonsoft.Json.dll
+>>>>>>> Stashed changes
