@@ -11,7 +11,6 @@ namespace EzPlan.Models
         public string Journee { get; set; }
         public double HeureDebut { get; set; }
         public double HeureFin { get; set; }
-        public HoraireDisponibilites HoraireDisponibilites { get; set; }
 
         public Disponibilite()
         {

@@ -12,9 +12,8 @@ namespace EzPlan.Models
         public double DureeApproximative { get; set; }
         public double DureeMaxConsecutive { get; set; }
         public int NiveauDeStress { get; set; }
-        public Utilisateur Utilisateur { get; set; }
 
-        public Tache(){}
+        public Tache() { }
 
         public Tache(string nom, double dureeApproximative, double dureeMaxConsecutive, int niveauDeStress)
         {
@@ -24,6 +23,5 @@ namespace EzPlan.Models
             NiveauDeStress = niveauDeStress;
         }
     }
-
 
 }

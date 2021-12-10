@@ -9,21 +9,29 @@ namespace EzPlan.Models
     {
         public int TachePlanifieeID { get; set; }
         public DateTime DateEcheance { get; set; }
-        public SemainePlanifiee SemainePlanifiee { get; set; }
-        public List<PartieDeTachePlanifiee> PartiesDeTachesPlanifiees { get; set; }
         public Tache Tache { get; set; }
-
-        public TachePlanifiee()
+        public List<PartieDeTachePlanifiee> PartiesDeTachesPlanifiees { get; set; }
+        
+        public TachePlanifiee() { }
+        
+        public TachePlanifiee(DateTime dateEcheance, Tache tache)
         {
+            DateEcheance = dateEcheance;
+            Tache = tache;
         }
 
-        public TachePlanifiee(int tachePlanifieeID, DateTime dateEcheance, SemainePlanifiee semainePlanifiee, List<PartieDeTachePlanifiee> partiesDeTachesPlanifiees, Tache tache)
+        public string AjouterUnePartieDeTachePlanifiee(PartieDeTachePlanifiee partieDeTache)
         {
-            TachePlanifieeID = tachePlanifieeID;
-            DateEcheance = dateEcheance;
-            SemainePlanifiee = semainePlanifiee;
-            Tache = tache;
-            PartiesDeTachesPlanifiees = partiesDeTachesPlanifiees;
+            if (PartiesDeTachesPlanifiees == null)
+            {
+                PartiesDeTachesPlanifiees = new();
+            }
+            if (!PartiesDeTachesPlanifiees.Contains(partieDeTache))
+            {
+                PartiesDeTachesPlanifiees.Add(partieDeTache);
+                return "Partie de tâche ajoutée avec succès.";
+            }
+            return "Cette partie de tâche existe déjà.";
         }
     }
 }
