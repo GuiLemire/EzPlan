@@ -29,9 +29,14 @@ namespace WebApplication8.Controllers
         public IActionResult Get()
         {
             Disponibilite dispo = new("Mardi", 1234, 1235);
-            return DisponibiliteParser.ParseToJSON(dispo);
-
+            return new JsonResult(dispo);
         }
+        [HttpGet("{json}")]
+        public void 
+
+
+
+
         //https://localhost:44339/weatherforecast/33
         [HttpGet("{temp}")]
         public IEnumerable<object> JsonArray(string temp)

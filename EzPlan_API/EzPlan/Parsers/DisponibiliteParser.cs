@@ -1,5 +1,6 @@
 ﻿using EzPlan.Models;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,18 +13,7 @@ namespace EzPlan.Parsers
     {
         public static Disponibilite ParseFromJSON(string disponibiliteJSON)
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<Disponibilite>(disponibiliteJSON);
+            return JsonConvert.DeserializeObject<Disponibilite>(disponibiliteJSON);
         }
-        public static JsonResult ParseToJSON(Disponibilite disponibilite)
-        {
-            var retour = new
-            {
-                disponibilite.DisponibiliteID,
-                disponibilite.Journee,
-                disponibilite.HeureDebut,
-                disponibilite.HeureFin
-            };
-            return new JsonResult(retour);
-        }
-}
+    }
 }

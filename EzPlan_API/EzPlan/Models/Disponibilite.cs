@@ -23,5 +23,10 @@ namespace EzPlan.Models
             HeureDebut = heureDebut;
             HeureFin = heureFin;
         }
+
+        public override string ToString()
+        {
+            return "hd = " + HeureDebut.ToString() + ", hf = " + HeureFin.ToString();
+        }
     }
 }
