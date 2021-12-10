@@ -1,4 +1,5 @@
-﻿using EzPlan.Models;
+﻿using EzPlan.DAL;
+using EzPlan.Models;
 using EzPlan.Parsers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -13,26 +14,48 @@ namespace WebApplication8.Controllers
     [Route("[controller]")]
     public class EzPlanApiController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
-
         private readonly ILogger<EzPlanApiController> _logger;
+        private EzPlanContext DbContext { get; set; }
 
         public EzPlanApiController(ILogger<EzPlanApiController> logger)
         {
             _logger = logger;
+            DbContext = new() ;
         }
 
+        /*Méthodes de L'API*/
+        [HttpGet("creerHoraireDisponibilites/{utilisateurID}/{horaireDisponibilitesJSON}")]
+
+        public IActionResult CreerHoraireDisponibilites(int utilisateurID, string horaireDisponibilitesJSON)
+        {
+            string message = "L'horaire n'a pas été ajouté";
+            Utilisateur utilisateur = DbContext.Utilisateurs.Find(utilisateurID);
+            if (utilisateur != null)
+            {
+                HoraireDisponibilites nouvelHoraireDisponibilites = HoraireDisponibilitesParser.ParseFromJSON(horaireDisponibilitesJSON);
+                message = utilisateur.ajouterUnHoraire(nouvelHoraireDisponibilites);
+                DbContext.SaveChanges();
+            }
+            return new JsonResult(message);
+        }
+
+
+        /*Méthodes de tests*/
         [HttpGet]
         public IActionResult Get()
         {
-            Disponibilite dispo = new("Mardi", 1234, 1235);
-            return new JsonResult(dispo);
+            HoraireDisponibilites monHoraire = new HoraireDisponibilites("Mon horaire");
+            Disponibilite dispo = new Disponibilite("Jeudi", 12, 14.5);
+            monHoraire.AjouterDisponibilite(dispo);
+            return new JsonResult(monHoraire);
         }
-        [HttpGet("{json}")]
-        public void 
+        [HttpGet("json/{json}")]
+        public void GetDispoFromJson(string json)
+        {
+            Disponibilite result = DisponibiliteParser.ParseFromJSON(json);
+            DbContext.Disponibilites.Add(result);
+            DbContext.SaveChanges();
+        }
 
 
 

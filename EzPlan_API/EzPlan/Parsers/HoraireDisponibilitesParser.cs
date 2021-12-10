@@ -12,5 +12,9 @@ namespace EzPlan.Parsers
         //{
         //    return new JsonResult
         //}
+        internal static HoraireDisponibilites ParseFromJSON(string horaireDisponibiliteJSON)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

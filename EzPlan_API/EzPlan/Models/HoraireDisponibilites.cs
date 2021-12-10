@@ -10,8 +10,6 @@ namespace EzPlan.Models
         public int HoraireDisponibilitesID { get; set; }
         public string Nom { get; set; }
         public List<Disponibilite> Disponibilites { get; set; }
-        public Utilisateur Utilisateur { get; set; }
-
         public HoraireDisponibilites()
         {
         }
