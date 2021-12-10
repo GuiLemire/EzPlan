@@ -8,10 +8,6 @@ namespace EzPlan.Parsers
 {
     public class HoraireDisponibilitesParser
     {
-        //public static HoraireDisponibilites ParseFromJSON(string horaireDisponibilitesJSON)
-        //{
-        //    return new JsonResult
-        //}
         internal static HoraireDisponibilites ParseFromJSON(string horaireDisponibiliteJSON)
         {
             throw new NotImplementedException();

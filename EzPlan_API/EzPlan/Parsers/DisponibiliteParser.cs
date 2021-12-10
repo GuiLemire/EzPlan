@@ -19,7 +19,7 @@ namespace EzPlan.Parsers
             }
             catch (JsonReaderException e)
             {
-                return null;
+                throw new JsonReaderException(e.Message);
             }
         }
     }

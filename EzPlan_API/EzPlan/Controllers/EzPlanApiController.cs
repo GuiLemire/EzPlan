@@ -15,30 +15,41 @@ namespace WebApplication8.Controllers
     [Route("[controller]")]
     public class EzPlanApiController : ControllerBase
     {
+        private const string PATH_CREER_HORAIRE_DISPONIBILITE = "creerHoraireDisponibilites/{utilisateurID}/{horaireDisponibilitesJSON}";
+        private const string PATH_CREER_TACHE = "creerTache/{utilisateurID}/{tacheJSON}";
+        private const string PATH_PLANIFIER_SEMAINE = "planifierSemaine/{utilisateurID}/{semainePourPlanifierJSON}/{tachesPourPlanifier}";
         private readonly ILogger<EzPlanApiController> _logger;
         private EzPlanContext DbContext { get; set; }
 
         public EzPlanApiController(ILogger<EzPlanApiController> logger)
         {
             _logger = logger;
-            DbContext = new() ;
+            DbContext = new();
         }
 
         /*Méthodes de L'API*/
-        [HttpGet("creerHoraireDisponibilites/{utilisateurID}/{horaireDisponibilitesJSON}")]
+        [HttpGet(PATH_CREER_HORAIRE_DISPONIBILITE)]
         public IActionResult CreerHoraireDisponibilites(int utilisateurID, string horaireDisponibilitesJSON)
         {
             string message = "L'horaire n'a pas été ajouté";
             Utilisateur utilisateur = DbContext.Utilisateurs.Find(utilisateurID);
             if (utilisateur != null)
             {
-                HoraireDisponibilites nouvelHoraireDisponibilites = HoraireDisponibilitesParser.ParseFromJSON(horaireDisponibilitesJSON);
-                message = utilisateur.ajouterUnHoraire(nouvelHoraireDisponibilites);
-                DbContext.SaveChanges();
+                try
+                {
+                    HoraireDisponibilites nouvelHoraireDisponibilites = HoraireDisponibilitesParser.ParseFromJSON(horaireDisponibilitesJSON);
+                    message = utilisateur.ajouterUnHoraire(nouvelHoraireDisponibilites);
+                    DbContext.SaveChanges();
+                }
+                catch (JsonReaderException)
+                {
+                    message = ConstruireMessageErreur(message);
+                }
+
             }
             return new JsonResult(message);
         }
-
+        [HttpGet(PATH_CREER_TACHE)]
         public IActionResult CreerTache(int utilisateurID, string tacheJSON)
         {
             string message = "La tache n'a pas été ajoutée";
@@ -50,15 +61,15 @@ namespace WebApplication8.Controllers
                     Tache tache = TacheParser.ParseFromJSON(tacheJSON);
                     message = utilisateur.ajouterUneTache(tache);
                     DbContext.SaveChanges();
-                } 
+                }
                 catch (JsonReaderException)
                 {
-                    message = "Une erreur est survenue. " + message;
+                    message = ConstruireMessageErreur(message);
                 }
             }
             return new JsonResult(message);
         }
-
+        [HttpGet(PATH_PLANIFIER_SEMAINE)]
         public IActionResult PlanifierSemaine(int utilisateurID, string semainePourPlanifierJSON, string tachesPourPlanifier)
         {
             string message = "La semaine n'a pas été planifiée";
@@ -67,11 +78,11 @@ namespace WebApplication8.Controllers
             {
                 try
                 {
-
+                    //todo
                 }
                 catch (JsonReaderException)
                 {
-                    message = ConstruireMessageErreur(message); 
+                    message = ConstruireMessageErreur(message);
                 }
             }
             return new JsonResult(message);
@@ -79,22 +90,8 @@ namespace WebApplication8.Controllers
 
         private string ConstruireMessageErreur(string message)
         {
-            throw new NotImplementedException();
+            return "Une erreur est survenue. " + message;
         }
-
-            SemainePlanifiee semainePlanifiee = new(DateTime.Now, monHoraire);
-            JourneePlanifiee journeePlanifiee = new(DateTime.Now);
-            TachePlanifiee tachePlanifiee = new(DateTime.Now, tache);
-            PartieDeTachePlanifiee partieDeTache = new(DateTime.Now, 1.5);
-            tachePlanifiee.AjouterUnePartieDeTachePlanifiee(partieDeTache);
-            journeePlanifiee.AjouterUnePartieDeTachePlanifiee(partieDeTache);
-            semainePlanifiee.AjouterUneJourneePlanifiee(journeePlanifiee);
-            semainePlanifiee.AjouterUneTachePlanifiee(tachePlanifiee);
-            user.ajouterUneSemainePlanifiee(semainePlanifiee);
-
-            return new JsonResult(user);
-        }
-
 
         /*Méthodes de tests*/
         [HttpGet]
