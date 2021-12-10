@@ -10,7 +10,11 @@ namespace EzPlan.Models
         public int PartieDeTachePlanifieeID { get; set; }
         public DateTime Date { get; set; }
         public double Duree { get; set; }
-        public TachePlanifiee TachePlanifiee { get; set; }  
-        public JourneePlanifiee JourneePlanifiee { get; set; }
+
+        public PartieDeTachePlanifiee(DateTime date, double duree)
+        {
+            Date = date;
+            Duree = duree;
+        }
     }
 }

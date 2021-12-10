@@ -82,7 +82,18 @@ namespace WebApplication8.Controllers
             throw new NotImplementedException();
         }
 
+            SemainePlanifiee semainePlanifiee = new(DateTime.Now, monHoraire);
+            JourneePlanifiee journeePlanifiee = new(DateTime.Now);
+            TachePlanifiee tachePlanifiee = new(DateTime.Now, tache);
+            PartieDeTachePlanifiee partieDeTache = new(DateTime.Now, 1.5);
+            tachePlanifiee.AjouterUnePartieDeTachePlanifiee(partieDeTache);
+            journeePlanifiee.AjouterUnePartieDeTachePlanifiee(partieDeTache);
+            semainePlanifiee.AjouterUneJourneePlanifiee(journeePlanifiee);
+            semainePlanifiee.AjouterUneTachePlanifiee(tachePlanifiee);
+            user.ajouterUneSemainePlanifiee(semainePlanifiee);
 
+            return new JsonResult(user);
+        }
 
 
         /*Méthodes de tests*/
