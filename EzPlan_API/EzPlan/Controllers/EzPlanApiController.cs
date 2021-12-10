@@ -3,6 +3,7 @@ using EzPlan.Models;
 using EzPlan.Parsers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +26,6 @@ namespace WebApplication8.Controllers
 
         /*Méthodes de L'API*/
         [HttpGet("creerHoraireDisponibilites/{utilisateurID}/{horaireDisponibilitesJSON}")]
-
         public IActionResult CreerHoraireDisponibilites(int utilisateurID, string horaireDisponibilitesJSON)
         {
             string message = "L'horaire n'a pas été ajouté";
@@ -38,6 +38,51 @@ namespace WebApplication8.Controllers
             }
             return new JsonResult(message);
         }
+
+        public IActionResult CreerTache(int utilisateurID, string tacheJSON)
+        {
+            string message = "La tache n'a pas été ajoutée";
+            Utilisateur utilisateur = DbContext.Utilisateurs.Find(utilisateurID);
+            if (utilisateur != null)
+            {
+                try
+                {
+                    Tache tache = TacheParser.ParseFromJSON(tacheJSON);
+                    message = utilisateur.ajouterUneTache(tache);
+                    DbContext.SaveChanges();
+                } 
+                catch (JsonReaderException)
+                {
+                    message = "Une erreur est survenue. " + message;
+                }
+            }
+            return new JsonResult(message);
+        }
+
+        public IActionResult PlanifierSemaine(int utilisateurID, string semainePourPlanifierJSON, string tachesPourPlanifier)
+        {
+            string message = "La semaine n'a pas été planifiée";
+            Utilisateur utilisateur = DbContext.Utilisateurs.Find(utilisateurID);
+            if (utilisateur != null)
+            {
+                try
+                {
+
+                }
+                catch (JsonReaderException)
+                {
+                    message = ConstruireMessageErreur(message); 
+                }
+            }
+            return new JsonResult(message);
+        }
+
+        private string ConstruireMessageErreur(string message)
+        {
+            throw new NotImplementedException();
+        }
+
+
 
 
         /*Méthodes de tests*/
@@ -56,10 +101,6 @@ namespace WebApplication8.Controllers
             DbContext.Disponibilites.Add(result);
             DbContext.SaveChanges();
         }
-
-
-
-
         //https://localhost:44339/weatherforecast/33
         [HttpGet("{temp}")]
         public IEnumerable<object> JsonArray(string temp)
