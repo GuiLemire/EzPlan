@@ -13,7 +13,14 @@ namespace EzPlan.Parsers
     {
         public static Disponibilite ParseFromJSON(string disponibiliteJSON)
         {
-            return JsonConvert.DeserializeObject<Disponibilite>(disponibiliteJSON);
+            try
+            {
+                return JsonConvert.DeserializeObject<Disponibilite>(disponibiliteJSON);
+            }
+            catch (JsonReaderException e)
+            {
+                throw new JsonReaderException(e.Message);
+            }
         }
     }
 }
