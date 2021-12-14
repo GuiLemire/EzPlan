@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'EzPlan-Angular';
+
+
+  changerPage(page : string) {
+    this.title = page;
+  }
 }
+
