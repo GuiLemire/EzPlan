@@ -28,3 +28,5 @@ EzPlan_API/EzPlan/obj/EzPlan.csproj.nuget.dgspec.json
 EzPlan_API/EzPlan/obj/EzPlan.csproj.nuget.g.props
 EzPlan_API/EzPlan/obj/project.assets.json
 EzPlan_API/EzPlan/obj/project.nuget.cache
+EzPlan_API/EzPlan/obj/Debug/net5.0/EzPlan.assets.cache
+EzPlan_API/EzPlan/obj/Debug/net5.0/EzPlan.GeneratedMSBuildEditorConfig.editorconfig
