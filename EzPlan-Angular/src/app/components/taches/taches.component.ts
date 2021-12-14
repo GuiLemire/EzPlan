@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TachesService } from 'src/app/services/taches.service';
 import { Tache } from '../../models/tache';
 
 @Component({
@@ -10,9 +11,14 @@ export class TachesComponent implements OnInit {
 
   taches?: Tache[];
 
-  constructor() { }
+  constructor(private tachesService: TachesService) { }
 
   ngOnInit(): void {
+    this.getTaches();
+  }
+
+  async getTaches(){
+    this.taches = await this.tachesService.getTacheByUtilisateurID().toPromise();
   }
 
 }

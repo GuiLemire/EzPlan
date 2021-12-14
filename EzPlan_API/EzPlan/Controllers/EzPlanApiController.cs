@@ -4,6 +4,7 @@ using EzPlan.Parsers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using System.Data.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,7 @@ namespace WebApplication8.Controllers
     [Route("[controller]")]
     public class EzPlanApiController : ControllerBase
     {
+        private const string PATH_GET_TACHES_BY_UTILISATEUR_ID = "getTaches/{utilisateurID}";
         private const string PATH_CREER_HORAIRE_DISPONIBILITE = "creerHoraireDisponibilites/{utilisateurID}/{horaireDisponibilitesJSON}";
         private const string PATH_CREER_TACHE = "creerTache/{utilisateurID}/{tacheJSON}";
         private const string PATH_PLANIFIER_SEMAINE = "planifierSemaine/{utilisateurID}/{semainePourPlanifierJSON}/{tachesPourPlanifier}";
@@ -28,7 +30,17 @@ namespace WebApplication8.Controllers
         }
 
         /*Méthodes de L'API*/
-        [HttpGet(PATH_CREER_HORAIRE_DISPONIBILITE)]
+        [HttpGet(PATH_GET_TACHES_BY_UTILISATEUR_ID)]
+        public IActionResult GetTachesByUtilisateurID(int utilisateurID)
+        {
+            Utilisateur utilisateur = GetFullUtilisateurByID(utilisateurID);
+            List<Tache> taches = utilisateur.Taches;
+          
+            return new JsonResult(taches);
+        }
+
+
+        /*[HttpGet(PATH_CREER_HORAIRE_DISPONIBILITE)]
         public IActionResult CreerHoraireDisponibilites(int utilisateurID, string horaireDisponibilitesJSON)
         {
             string message = "L'horaire n'a pas été ajouté";
@@ -49,6 +61,7 @@ namespace WebApplication8.Controllers
             }
             return new JsonResult(message);
         }
+
         [HttpGet(PATH_CREER_TACHE)]
         public IActionResult CreerTache(int utilisateurID, string tacheJSON)
         {
@@ -91,9 +104,9 @@ namespace WebApplication8.Controllers
         private string ConstruireMessageErreur(string message)
         {
             return "Une erreur est survenue. " + message;
-        }
+        }*/
 
-        /*Méthodes de tests*/
+        /*Méthodes de tests
         [HttpGet]
         public IActionResult Get()
         {
@@ -130,6 +143,12 @@ namespace WebApplication8.Controllers
             liste.Add(mike);
 
             return liste;
+        }*/
+
+        public Utilisateur GetFullUtilisateurByID(int id)
+        {
+            Utilisateur utilisateur = DbContext.Utilisateurs.Include(u => u.Taches).FirstOrDefault(u => u.UtilisateurID == id);
+            return utilisateur;
         }
 
     }
