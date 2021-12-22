@@ -1,4 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+h1 {margin: 0;}
+
+#main-page {
+    max-height: 100vh;
+}
+
+#header {
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+    height: 8%;
+    border-bottom: solid black 2px;
+}
+
+#footer {
+    display: flex;
+    height: 8%;
+    border-top: solid black 2px;
+}
+
+#backBtn {
+    margin-left: 1.5%;
+}
+
+.center {
+    text-align: center;
+}

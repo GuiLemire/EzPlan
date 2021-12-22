@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { lastValueFrom } from 'rxjs';
 import { TachesService } from 'src/app/services/taches.service';
 import { Tache } from '../../models/tache';
 
@@ -11,14 +12,21 @@ export class TachesComponent implements OnInit {
 
   taches?: Tache[];
 
+  @Output() notifierTacheID = new EventEmitter<number>();
+
   constructor(private tachesService: TachesService) { }
 
   ngOnInit(): void {
     this.getTaches();
   }
 
-  async getTaches(){
-    this.taches = await this.tachesService.getTacheByUtilisateurID().toPromise();
+  async getTaches() {
+    const taches$ = this.tachesService.getTacheByUtilisateurID();
+    this.taches = await lastValueFrom(taches$);
+  }
+
+  modifierTache(tacheID? : number) {
+    this.notifierTacheID.emit(tacheID);
   }
 
 }

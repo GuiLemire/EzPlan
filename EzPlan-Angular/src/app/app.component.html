@@ -1,19 +1,35 @@
-<header>
-  {{title}}
+<header id="header" class="d-flex align-items-center justify-content-center position-relative">
+  <button id="backBtn" type="button" class="btn btn-dark position-absolute bottom-5 start-0"
+    *ngIf="title != 'Mon planning'" (click)="changerPage('Mon planning')">Back</button>
+  <h1>{{title}}</h1>
 </header>
 
-<br>
-<div>
-  <app-taches *ngIf="title == 'taches'"></app-taches>
-</div>
-<br>
+<div *ngIf="title == 'Taches'">
+  <div *ngIf="subTitle == '' || subTitle == 'Modifier tâche'">
+    <!-- Liste pleine page -->
+    <div class="position-absolute bottom-0 end-0 mb-3 me-3">
+      <button type="button" class="btn btn-success" (click)="nouvelleTache()">Add</button>
+    </div>
+  </div>
 
-<footer>
-  <nav>
-    <button (click)="changerPage('taches')">Tâche</button>
-    <button (click)="changerPage('planning')">Planning</button>
-    <button (click)="changerPage('disponibilites')">Disponibilités</button>
-  </nav>
+  <!-- Liste demi-page avec nouvelle tache -->
+  <div class="ml-2 mr-2" *ngIf="subTitle == 'Nouvelle tâche' || subTitle == 'Modifier tâche'">
+    <h3 class="center mt-2">{{subTitle}}</h3>
+    <app-tache [tacheID]='tacheID'></app-tache>
+  </div>
+
+  <!-- Liste de taches -->
+  <div class="ml-2 mr-2">
+    <app-taches (notifierTacheID)="modifierTache($event)"></app-taches>
+  </div>
+</div>
+
+
+
+<footer id="footer" class="fixed-bottom hstack gap-3" *ngIf="title == 'Mon planning'">
+  <button type="button" class="btn btn-primary m-auto" (click)="changerPage('Taches')">Tâche</button>
+  <button type="button" class="btn btn-primary m-auto" (click)="changerPage('Planning')">Planning</button>
+  <button type="button" class="btn btn-primary m-auto" (click)="changerPage('Disponibilites')">Disponibilités</button>
 </footer>
 
 <router-outlet></router-outlet>

@@ -7,11 +7,11 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class TachesService {
-  private URL = "https://localhost:44350/EzPlanApi/";
+  private URL = "http://ezplan.calendrierdesemis.com/";
   constructor(private http: HttpClient) { }
 
   getTacheByUtilisateurID(): Observable<Tache[]> {
-    let response = this.http.get<Tache[]>("https://localhost:44350/EzPlanApi/getTaches/1");
+    let response = this.http.get<Tache[]>(this.URL + "EzPlanApi/getTaches/289");
     return response;
   }
 }

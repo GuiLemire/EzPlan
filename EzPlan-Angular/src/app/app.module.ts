@@ -6,11 +6,13 @@ import { MatListModule } from '@angular/material/list';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TachesComponent } from './components/taches/taches.component';
+import { TacheComponent } from './components/tache/tache.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TachesComponent
+    TachesComponent,
+    TacheComponent
   ],
   imports: [
     MatListModule,
