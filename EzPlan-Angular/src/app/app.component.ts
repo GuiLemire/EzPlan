@@ -1,29 +1,32 @@
 import { Component } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+registerLocaleData(localeFr, 'fr');
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'Mon planning';
-  subTitle = '';
-  tacheID = -1;
+export class AppComponent
+{
+  title : string = 'Mon planning';
+  state : string = 'listeSemaines';
 
-  changerPage(page : string) {
+  constructor() { }
+
+  async changerPage(page: string)
+  {
     this.title = page;
-    this.subTitle = '';
+    if (this.title == "Mon planning"){
+      this.state = "listeSemaines";
+    }else {
+      this.state = "other";
+    }
   }
 
-  modifierTache(tacheID : number) {
-    this.subTitle = 'Modifier tâche'
-    this.tacheID = tacheID;
+  stateSemaines(state : string){
+    this.state = state;
   }
-
-  nouvelleTache() {
-    this.subTitle = 'Nouvelle tâche'
-    this.tacheID = -1;
-  }
-
 }
 

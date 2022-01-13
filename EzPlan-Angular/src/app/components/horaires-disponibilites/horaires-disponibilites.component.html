@@ -1,0 +1,9 @@
+<div *ngIf='state == "liste"'>
+    <p>Liste d'horaire(s) de disponibilités</p>
+    <ul class="list-group">
+        <li class="list-group-item list-group-item-action list-tache-item"  *ngFor='let horaireDisponibilites of horairesDisponibilites' (click)="afficherHoraire(horaireDisponibilites.horaireDisponibilitesID)">{{horaireDisponibilites.nom}}</li>
+    </ul>
+    
+    <button class="btn btn-success" id="btnNouvelHoraire" (click)='nouvelHoraire()'>Ajouter un nouvel horaire</button>
+</div>
+<app-horaire-disponibilites [horaireDisponibilitesID]="horaireDisponibilitesID" (ajouterNouvelHoraire)="ajouterNouvelHoraire($event)" (retourListe)="retourListe()" *ngIf='state == "horaire"'></app-horaire-disponibilites>

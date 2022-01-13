@@ -1,17 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-h1 {margin: 0;}
+html, body {
+    width: 100vw;
+    height: 100vh;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
-#main-page {
-    max-height: 100vh;
+h1 {
+    margin: 0;
+}
+
+h5 {
+    font-size: large;
+    font-weight: normal;
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
 }
 
 #header {
-    padding-left: 1.5%;
-    padding-right: 1.5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 8%;
     border-bottom: solid black 2px;
 }
@@ -22,10 +33,26 @@ h1 {margin: 0;}
     border-top: solid black 2px;
 }
 
-#backBtn {
-    margin-left: 1.5%;
-}
-
 .center {
     text-align: center;
+}
+
+.list-group {
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.list-group-item {
+    margin-bottom: 2%;
+    background-color: rgb(240, 240, 240);
+}
+
+.hover-dark:hover {
+    filter: brightness(0.7);
+    cursor: pointer;
+}
+
+.hover-light:hover {
+    filter: brightness(3);
+    cursor: pointer;
 }

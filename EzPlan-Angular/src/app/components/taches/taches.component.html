@@ -1,3 +1,17 @@
-<ul class="list-group">
-    <li class="list-group-item list-group-item-action" *ngFor="let tache of taches" (click)="modifierTache(tache.tacheID)" > {{tache.nom}} </li>
-</ul>
+<div *ngIf="state === 'nouvelle-tache'">
+    <h3 class="center mt-2">Nouvelle tâche</h3>
+    <app-tache (retourListe) = "retourListe()" (ajouterNouvelleTache)="ajouterNouvelleTache($event)" [tacheID]='tacheID'></app-tache>
+</div>
+<div *ngIf="state === 'modifier-tache'">
+    <h3 class="center mt-2">Modifier tâche</h3>
+    <app-tache (retourListe) = "retourListe()" (ajouterNouvelleTache)="ajouterNouvelleTache($event)" [tacheID]='tacheID'></app-tache>
+</div>
+
+<div>
+    <ul class="list-group">
+        <li class="list-group-item list-group-item-action list-tache-item" *ngFor="let tache of taches" (click)="afficherTache(tache.tacheID)"> {{tache.nom}} </li>
+    </ul>
+    <div *ngIf="state !== 'nouvelle-tache'" class="position-absolute bottom-0 end-0 mb-3 me-3">
+        <i class="fas fa-plus fa-3x hover-dark" (click)="creerTache()"></i>
+    </div>
+</div>

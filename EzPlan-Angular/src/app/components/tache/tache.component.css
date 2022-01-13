@@ -1,3 +1,18 @@
-* {
-    height: 40vh;
+.form-tache {
+    padding-bottom: 2%;
+    border-bottom: solid black 2px;
 }
+
+.form-control {
+    margin-bottom: 2%;
+}
+
+#btnAjouterTache {
+    margin-top: 2%;
+}
+
+.input-case {
+    margin-left: auto;
+    width: fit-content;
+}
+

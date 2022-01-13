@@ -1,0 +1,12 @@
+#ajouterTache {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    font-size: 150%;
+}
+
+.fa-plus {
+    color: green;
+}
+
+

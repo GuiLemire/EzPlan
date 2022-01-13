@@ -1,3 +1,25 @@
-<div>
- {{tacheID}}
+<div class="form-tache">
+    <span id="inputGroup-nom">Nom:</span>
+    <input id="nom" type="text" class="form-control" aria-label="Nom de la tâche" aria-describedby="inputGroup-nom" [(ngModel)]="tache.nom" name="tache.nom" placeholder="Saisir un nom" />
+    
+    <div id="dureeApprox" class="d-flex input-cell">
+        <label for="tache.dureeApproximative" class="d-flex align-items-center">Durée totale approximative: </label>
+        <input id="dureeApproximative" class="d-flex form-control input-case" type="number" min="15" max="480" step="15" onkeydown="return false" [(ngModel)]="tache.dureeApproximative" name="tache.dureeApproximative" (change)="validerDureeConsecutiveMax()" />
+    </div>
+
+    <div id="" class="d-flex input-cell">
+        <label for="tache.dureeMaxConsecutive" class="d-flex align-items-center">Durée consécutive maximum: </label>
+        <input id="dureeMaxConsecutive" class="d-flex form-control input-case" type="number" min="15" max="{{tache.dureeApproximative}}" step="15" onkeydown="return false" [(ngModel)]="tache.dureeMaxConsecutive" name="tache.dureeMaxConsecutive" [ngClass]="{'redBorder' : !isValide }" (change)="validerDureeConsecutiveMax()" />
+    </div>
+
+    <div id="" class="d-flex input-cell">
+        <label for="tache.niveauDeStress" class="d-flex align-items-center">Niveau de stress: </label>
+        <input id="niveauDeStress" class="d-flex form-control input-case" type="number" min="0" max="3" step="1" onkeydown="return false" [(ngModel)]="tache.niveauDeStress" name="tache.niveauDeStress" />
+    </div>
+
+    <div class="d-flex justify-content-center">        
+        <button *ngIf = "tacheID == -1" class="btn btn-primary m-1" id="btnAjouterTache" (click)="ajouterTache()">Ajouter tâche</button>
+        <button *ngIf = "tacheID != -1" class="btn btn-primary m-1" id="btnEnregistrerTache" (click)="enregistrerTache()">Enregistrer tâche</button>
+        <button *ngIf = "tacheID != -1" class="btn btn-primary m-1" id="btnSupprimerTache" (click)="supprimerTache()">Supprimer tâche</button>
+    </div>
 </div>
