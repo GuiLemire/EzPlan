@@ -24,6 +24,11 @@
     margin-top: 0;
 }
 
+#btnAccepter {
+    display: flex;
+    justify-content: center;
+}
+
 li p {
     margin-bottom: 2%;
 }

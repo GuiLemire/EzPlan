@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { JourneePlanifiee } from 'src/app/models/journeePlanifiee';
+import { TachePlanifiee } from 'src/app/models/tachePlanifiee';
 
 @Component({
   selector: 'app-journee-planifiee',

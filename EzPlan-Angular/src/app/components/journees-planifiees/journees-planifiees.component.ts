@@ -36,22 +36,6 @@ export class JourneesPlanifieesComponent implements OnInit {
     this.state="journee";       
   }
 
-  retirerTache(tachePlanifee : TachePlanifiee)
-  {
-    if (confirm("Voulez-vous vraiment retirer la tâche " + tachePlanifee.tache?.nom + " ?"))
-    {
-      this.journeesPlanifieesService.retirerTache(tachePlanifee);
-      setTimeout(() => {
-        this.initialiserSemainePlanifiee();
-      },1000); 
-      setTimeout(() => {
-        if (typeof this.semainePlanifiee.tachesPlanifiees?.length == 'undefined'){
-          this.retourListeSemaines.emit();
-        }
-      },1100);   
-    }
-  }
-
   supprimerSemaine(){
     this.semainesPlanifieesService.supprimerSemainePlanifiee(this.semainePlanifiee);
     this.retourListeSemaines.emit();

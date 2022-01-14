@@ -33,10 +33,12 @@
     </div>
 </div>
 
-<div class="fixed-bottom">
-    <button class="btn btn-primary" id="accepter"
-        *ngIf="horaireDisponibilitesID == -1 && horaireDisponibilites.disponibilites!.length > 0"
-        (click)="ajouterHoraire()">Accepter nouvel horaire</button>
+<div class=" fixed-bottom">
+    <div id="btnAccepter">
+        <button class="btn btn-primary" *ngIf="horaireDisponibilitesID == -1 && 
+        horaireDisponibilites.disponibilites!.length > 0" (click)="ajouterHoraire()">Accepter nouvel horaire</button>
+    </div>
+
     <div id="btnEnreSupp" class="gap-4">
         <button class="btn btn-primary" *ngIf="horaireDisponibilitesID != -1"
             (click)='enregistrerHoraire()'>Enregistrer</button>
