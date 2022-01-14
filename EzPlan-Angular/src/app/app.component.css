@@ -2,19 +2,53 @@
     #main_content, #header_content, #footer_content {
         padding: 0 25%;
     }
+
+    #header_content {
+        position: relative;
+    }
+
+    #backBtn {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left:0;
+        right:0;
+        margin: auto;
+        height: 50%;
+    }
 }
 
 #main_content {
     margin: 3% 5%;
 }
 
-.btn-primary {
-    padding-left: 0;
-    padding-right: 0;
-    width: 30%;
+#footer_content {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+#taches, #disponibilites {
+    min-width: 60%;
+}
+
+#taches {
+    margin-left: min(5%);
+    margin-right: auto;
+}
+
+#disponibilites {
+    margin-right: min(5%);
+    margin-left: auto;
 }
 
 #backBtn {
-    margin-left: 4%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left:0;
+    right:0;
+    margin: auto;
+    width:90%;
+    height: 50%;
 }
-

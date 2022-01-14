@@ -52,7 +52,7 @@ export class TacheComponent implements OnInit, OnChanges {
     } else {
       if (this.isValide) {
         this.ajouterNouvelleTache.emit(this.tache);
-        this.tache = new Tache()
+        this.tache = new Tache();
       }
       else {
         this.messageErreur();

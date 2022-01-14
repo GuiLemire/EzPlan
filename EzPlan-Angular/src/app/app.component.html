@@ -1,6 +1,6 @@
-<header id="header">
-    <div id="header_content" class="position-relative">
-        <i id="backBtn" class="fas fa-angle-double-left fa-2x hover-light position-absolute start-0"
+<header id="header" class="position-relative">
+    <div id="header_content">
+        <i id="backBtn" class="fas fa-angle-double-left fa-2x hover-light"
             *ngIf="state != 'listeSemaines'" (click)="changerPage('Mon planning')"></i>
         <h1>{{title}}</h1>
     </div>
@@ -13,10 +13,10 @@
     </app-semaines-planifiees>
 </div>
 
-<footer id="footer" class="fixed-bottom hstack gap-3 mt-2 p-2" *ngIf="title == 'Mon planning'">
-    <div id="footer_content">
-        <button id="taches" type="button" class="btn btn-primary m-auto" (click)="changerPage('Taches')">Tâche</button>
-        <button id="disponibilites" type="button" class="btn btn-primary m-auto"
+<footer id="footer" class="fixed-bottom" *ngIf="title == 'Mon planning'">
+    <div id="footer_content" class="gap-4">
+        <button id="taches" type="button" class="btn btn-primary" (click)="changerPage('Taches')">Tâche</button>
+        <button id="disponibilites" type="button" class="btn btn-primary"
             (click)="changerPage('Disponibilites')">Disponibilités</button>
     </div>
 </footer>

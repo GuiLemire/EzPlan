@@ -2,3 +2,15 @@ label {
     font-size: large;
     font-weight: normal;
 }
+
+#horaire {
+    margin-bottom: 3%;
+}
+
+#dateSemaine {
+    margin-bottom: 3.5%;
+}
+
+#taches_a_planifier {
+    margin-top: 0;
+}

@@ -1,12 +1,7 @@
-#ajouterTache {
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
-    font-size: 150%;
-}
-
-.fa-plus {
-    color: green;
+ul {
+    padding-top: 1%;
+    overflow-y: auto;
+    margin-bottom: min(5%);
 }
 
 

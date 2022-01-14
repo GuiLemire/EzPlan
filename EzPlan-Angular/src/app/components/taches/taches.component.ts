@@ -34,10 +34,10 @@ export class TachesComponent implements OnInit {
   ajouterNouvelleTache(tache: Tache) {
     if (!this.isNomTacheDejaUtilise(tache)) {
       this.tachesService.creerTache(CONST.utilisateurID, tache);
-      this.taches![this.taches!.length] = tache;
       alert("La tache " + tache.nom + " a été ajoutée avec succès.")
+      this.getTaches();
     } else {
-      alert("La tache " + tache.nom + " n'a pas pu être ajoutée, le nom est déjà utilisé.")
+      alert("La tache " + tache.nom + " existe déjà.")
     }
   }
 

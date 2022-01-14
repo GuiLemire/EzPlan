@@ -1,0 +1,29 @@
+#nomHoraire {
+    margin-bottom: 5%;
+}
+
+.list-group {
+    margin: 0;
+    padding: 0;
+}
+
+.btn-success {
+    width: fit-content;
+}
+
+#btnEnreSupp {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 3%;
+}
+
+#btnModifSupp {
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+}
+
+li p {
+    margin-bottom: 2%;
+}

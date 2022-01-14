@@ -5,6 +5,7 @@ html, body {
     width: 100vw;
     height: 100vh;
     font-family: Roboto, "Helvetica Neue", sans-serif;
+    overflow: hidden;
 }
 
 h1 {
@@ -55,4 +56,11 @@ h5 {
 .hover-light:hover {
     filter: brightness(3);
     cursor: pointer;
+}
+
+.fa-plus {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: green;
 }

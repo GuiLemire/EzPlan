@@ -1,0 +1,13 @@
+select {
+    margin-bottom: 3%;
+}
+
+.btn-primary {
+    margin-top: 1%;
+}
+
+form {
+    border-bottom: solid black 2px;
+    padding-bottom: 3%;
+    margin-bottom: 3%;
+}
